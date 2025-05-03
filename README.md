@@ -30,5 +30,5 @@ This project is designed to help developers **learn how to build full CRUD apps 
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/todo-phoenix-manual.git
+git clone https://github.com/likithmanoj/todo.git
 cd todo-phoenix-manual
