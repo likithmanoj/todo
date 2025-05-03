@@ -1,18 +1,34 @@
-# Todo
+# 📝 Phoenix Todo App
 
-To start your Phoenix server:
+A simple Todo list web app built with Phoenix 1.7+ and PostgreSQL — **no generators used**, everything crafted manually to learn the full Phoenix + Ecto stack.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## 📚 Purpose
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+This project is designed to help developers **learn how to build full CRUD apps in Phoenix** without relying on `phx.gen.html` or any auto-generated views or contexts.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## ✅ Features
 
-## Learn more
+- Add a new todo with a title and optional description
+- View all todos
+- Mark todos as done or not done
+- Edit or delete existing todos
+- Fully manual setup: migrations, schema, context, controller, and templates
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+---
+
+## 🛠 Tech Stack
+
+- [Elixir](https://elixir-lang.org/)
+- [Phoenix 1.7+](https://www.phoenixframework.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Ecto](https://hexdocs.pm/ecto/Ecto.html)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/todo-phoenix-manual.git
+cd todo-phoenix-manual
