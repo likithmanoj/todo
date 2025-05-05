@@ -10,7 +10,8 @@ defmodule Todo.Todos.Todo do
   end
 
   def changeset(todo, params \\ %{}) do
-    todo|>cast(params,[:title,:description,:done])
+    todo
+    |>cast(params,[:title,:description,:done])
     |>validate_required([:title])
   end
 end
