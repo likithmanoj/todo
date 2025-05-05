@@ -17,7 +17,12 @@ defmodule TodoWeb.Router do
   scope "/", TodoWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get    "/todos",        TodoController, :index
+    get    "/todos/:id",    TodoController, :show
+    post   "/todos",        TodoController, :create
+    put    "/todos/:id",    TodoController, :update
+    patch  "/todos/:id",    TodoController, :update
+    delete "/todos/:id",    TodoController, :delete
   end
 
   # Other scopes may use custom stacks.
