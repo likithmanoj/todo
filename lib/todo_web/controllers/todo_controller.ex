@@ -21,10 +21,15 @@ defmodule TodoWeb.TodoController do
     end
   end
 
-  def update(conn, %{"id"=> id},%{"todo" => todo_params}) do
+  def update(conn, %{"id" => id},%{"todo" => todo_params}) do
+      todo = Todos.get_todo!(id)
+      case Todos.update_todo(todo,todo_params) do
+      {:ok, todo} ->
+        redirect(conn, to: ~p"/todos/#{todo.id}")
 
-
+      {:error, changeset} -> render(conn, "new.html", changeset: changeset)
   end
+end
 
   def delete(conn, %{"id"=> id}) do
       todo = Todos.get_todo!(id)
