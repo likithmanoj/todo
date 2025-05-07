@@ -1,34 +1,86 @@
-# 📝 Phoenix Todo App
+# 📋 Phoenix Todo App
 
-A simple Todo list web app built with Phoenix 1.7+ and PostgreSQL — **no generators used**, everything crafted manually to learn the full Phoenix + Ecto stack.
-
-## 📚 Purpose
-
-This project is designed to help developers **learn how to build full CRUD apps in Phoenix** without relying on `phx.gen.html` or any auto-generated views or contexts.
-
-## ✅ Features
-
-- Add a new todo with a title and optional description
-- View all todos
-- Mark todos as done or not done
-- Edit or delete existing todos
-- Fully manual setup: migrations, schema, context, controller, and templates
-
----
-
-## 🛠 Tech Stack
-
-- [Elixir](https://elixir-lang.org/)
-- [Phoenix 1.7+](https://www.phoenixframework.org/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Ecto](https://hexdocs.pm/ecto/Ecto.html)
+A basic Todo List web application built using **Phoenix 1.7** (without LiveView) that demonstrates full **CRUD** operations using server-rendered **HEEx templates** and **Ecto**.
 
 ---
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repo
+### ✅ Requirements
+
+- Elixir >= 1.14
+- Erlang/OTP >= 25
+- PostgreSQL
+- Phoenix >= 1.7
+
+---
+
+### 📦 Setup Instructions
 
 ```bash
-git clone https://github.com/likithmanoj/todo.git
-cd todo-phoenix-manual
+# Get dependencies
+mix deps.get
+
+# Create and migrate the database
+mix ecto.create
+mix ecto.migrate
+
+# Start the Phoenix server
+mix phx.server
+
+Now visit http://localhost:4000/todos to use your Todo app.
+
+⸻
+
+🛠 Features
+	•	✅ View all todos
+	•	➕ Add a new todo
+	•	✏️ Edit existing todos
+	•	❌ Delete todos
+	•	👁 View a specific todo’s details
+
+⸻
+
+📁 Project Structure
+
+File / Directory	Description
+lib/todo_web/controllers/todo_controller.ex	Handles web requests and CRUD actions
+lib/todo/todos.ex	Context module for todo business logic
+lib/todo/todos/todo.ex	Ecto schema and changeset logic
+lib/todo_web/templates/todo/*.html.heex	View templates for each action (index, new, show, edit)
+lib/todo_web/router.ex	Defines routes like /todos, /newTodo, etc.
+
+
+⸻
+
+✨ Routes Overview
+
+HTTP Verb	Path	Controller Action	Purpose
+GET	/todos	:index	List all todos
+GET	/todos/:id	:show	Show todo
+POST	/todos	:create	Create todo
+PATCH/PUT	/todos/:id	:update	Update todo
+DELETE	/todos/:id	:delete	Delete todo
+GET	/newTodo	:new	New todo form
+
+
+⸻
+
+📌 Notes
+	•	This app does not use LiveView — it uses traditional server-rendered HTML via .html.heex files.
+	•	Styling is applied inline in each template.
+	•	You may remove the default Phoenix files like PageController and home.html.heex if not using them.
+
+⸻
+
+🧪 Optional Enhancements
+	•	Add input validations and error messages
+	•	Improve form UI/UX with CSS frameworks like Tailwind
+	•	Add checkboxes for marking tasks as done
+	•	Integrate user authentication (phx.gen.auth)
+
+⸻
+
+🧾 License
+
+MIT — free to use, modify, and share.

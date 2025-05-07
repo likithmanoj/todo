@@ -1,0 +1,61 @@
+<section>
+  <p>
+    <%= @todo.title %><br />
+    <%= @todo.description %>  
+  </p>
+  <br />
+
+  <p>Edit your Todo</p>
+  <form action={~p"/todos/#{@todo.id}"} method="post">
+    <input type="text" name="todo[title]" value={@todo.title} placeholder="Edit your title here" required /><br />
+    <input type="text" name="todo[description]" value={@todo.description} placeholder="Edit your description here" required /> <br />
+    <button type="submit">Update todo</button>
+  </form>
+</section>
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>

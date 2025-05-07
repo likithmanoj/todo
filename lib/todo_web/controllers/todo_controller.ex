@@ -26,7 +26,7 @@ defmodule TodoWeb.TodoController do
       case Todos.update_todo(todo,todo_params) do
       {:ok, todo} ->
         redirect(conn, to: ~p"/todos/#{todo.id}")
-      {:error, changeset} -> render(conn, "new.html", changeset: changeset)
+      {:error, changeset} -> render(conn, "edit.html", changeset: changeset)
   end
 end
 
