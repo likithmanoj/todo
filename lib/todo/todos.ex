@@ -27,4 +27,6 @@ defmodule Todo.Todos do
        Repo.delete(todo)
      end
 
+     def change_todo(%Todo{} = todo), do: Todo.changeset(todo, %{})
+
 end

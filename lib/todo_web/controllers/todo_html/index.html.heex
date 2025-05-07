@@ -1,0 +1,15 @@
+<section>
+
+<h1>Todo List</h1>
+<ul>
+<%= for todo <- @todos do%>
+  <li>
+  <%= todo.title %>
+  </li>
+<% end %>
+</ul>
+
+<div>
+<a href = {~p"/newTodo"} style= "color: blue; text-decoration:underline;"> New </a>
+</div>
+</section>
