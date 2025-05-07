@@ -21,6 +21,12 @@ defmodule TodoWeb.TodoController do
     end
   end
 
+  def edit(conn, %{"id" => id}) do
+    todo = Todos.get_todo!(id)
+    changeset = Todos.change_todo(todo)
+    render(conn, "edit.html", todo: todo, changeset: changeset)
+  end
+
   def update(conn, %{"id" => id, "todo" => todo_params}) do
       todo = Todos.get_todo!(id)
       case Todos.update_todo(todo,todo_params) do

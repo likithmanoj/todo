@@ -7,10 +7,11 @@
 
   <p>Edit your Todo</p>
   <form action={~p"/todos/#{@todo.id}"} method="post">
-    <input type="text" name="todo[title]" value={@todo.title} placeholder="Edit your title here" required /><br />
-    <input type="text" name="todo[description]" value={@todo.description} placeholder="Edit your description here" required /> <br />
-    <button type="submit">Update todo</button>
-  </form>
+  <input type="hidden" name="_method" value="patch" /> <!-- This makes the form submit a PATCH request -->
+  <input type="text" name="todo[title]" value={@todo.title} placeholder="Edit your title here" required />
+  <input type="text" name="todo[description]" value={@todo.description} placeholder="Edit your description here" required />
+  <button type="submit">Update todo</button>
+</form>
 </section>
 
 <style>

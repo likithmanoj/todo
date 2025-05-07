@@ -6,7 +6,7 @@ defmodule TodoWeb.Router do
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, html: {TodoWeb.Layouts, :root}
-    plug :protect_from_forgery
+    #plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -17,8 +17,10 @@ defmodule TodoWeb.Router do
   scope "/", TodoWeb do
     pipe_through :browser
 
+    get "/", TodoController, :index
     get    "/todos",        TodoController, :index
     get    "/todos/:id",    TodoController, :show
+    get "/todos/:id/edit", TodoController, :edit
     post   "/todos",        TodoController, :create
     put    "/todos/:id",    TodoController, :update
     patch  "/todos/:id",    TodoController, :update

@@ -4,7 +4,7 @@
     <%= @todo.description %>  
   </p>
 
-  <a href={~p"/todos/#{@todo.id}"}>Edit</a>
+  <a href={~p"/todos/#{@todo.id}/edit"}>Edit</a>
 
   <form action={~p"/todos/#{@todo.id}"} method="post" style="display:inline;">
     <input type="hidden" name="_method" value="delete" />
