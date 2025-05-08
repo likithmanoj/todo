@@ -10,6 +10,8 @@
     <input type="hidden" name="_method" value="delete" />
     <button type="submit" style="color: red; border: none; background: none; cursor: pointer;">Delete</button>
   </form>
+
+  <a href={~p"/todos"} class="goback-btn">Go to Todos</a>
 </section>
 
 <style>
@@ -64,5 +66,15 @@
   /* Delete button hover effect */
   button:hover {
     text-decoration: underline;
+  }
+  .goback-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
   }
 </style>

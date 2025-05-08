@@ -12,6 +12,8 @@
   <input type="text" name="todo[description]" value={@todo.description} placeholder="Edit your description here" required />
   <button type="submit">Update todo</button>
 </form>
+
+<a href={~p"/todos"} class="goback-btn">Go to Todos</a>
 </section>
 
 <style>
@@ -58,5 +60,15 @@
 
   button:hover {
     background-color: #0056b3;
+  }
+  .goback-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
   }
 </style>
