@@ -6,7 +6,14 @@
       <li>
         <span class="todo-title"><%= todo.title %></span>
         <a href={~p"/todos/#{todo.id}"}>View</a>
-      </li>
+        <!-- Toggle switch -->
+        <form action={~p"/todos/#{todo.id}/toggle"} method="post" class="inline ml-2">
+        <input type="hidden" name="_method" value="patch" />
+        <button type="submit" class={"px-4 py-2 rounded text-white #{if todo.done, do: "bg-green-500", else: "bg-blue-500"}"}>
+          <%= if todo.done, do: "Mark Undo", else: "Mark Done" %>
+      </button>
+    </form>
+    </li>
     <% end %>
   </ul>
 

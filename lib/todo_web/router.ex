@@ -26,6 +26,7 @@ defmodule TodoWeb.Router do
     patch  "/todos/:id",    TodoController, :update
     delete "/todos/:id",    TodoController, :delete
     get "/newTodo", TodoController, :new
+    patch "/todos/:id/toggle", TodoController, :toggle
   end
 
   # Other scopes may use custom stacks.

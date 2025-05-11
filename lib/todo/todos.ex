@@ -29,4 +29,6 @@ defmodule Todo.Todos do
 
      def change_todo(%Todo{} = todo), do: Todo.changeset(todo, %{})
 
+     def toggle_todo(%Todo{} = todo), do: todo|>Todo.changeset(%{done: !todo.done})|>Repo.update()
+
 end

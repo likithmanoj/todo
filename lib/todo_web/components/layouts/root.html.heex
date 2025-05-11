@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="csrf-token" content={get_csrf_token()} />
+    <%!-- <meta name="csrf-token" content={get_csrf_token()} /> --%>
     <.live_title default="Todo" suffix=" · Phoenix Framework">
       {assigns[:page_title]}
     </.live_title>
@@ -16,10 +16,6 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
-      <p>Created by <strong>Likith Manoj M</strong></p>
-      <p>Email: <a href="mailto:likithmanoj@gmail.com" class="text-blue-400">likithmanoj@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/likithmanoj" class="text-blue-400" target="_blank" rel="noopener noreferrer">github.com/likithmanoj</a></p>
-    </footer>
+    
   </body>
 </html>

@@ -46,4 +46,9 @@ end
       changeset = Todos.change_todo(%Todos.Todo{})
       render(conn, "new.html", changeset: changeset)
     end
+    def toggle(conn, %{"id"=> id})do
+      todo = Todos.get_todo!(id)
+      Todos.toggle_todo(todo)
+      redirect(conn, to: ~p"/")
+    end
 end
